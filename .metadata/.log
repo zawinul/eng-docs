@@ -2143,3 +2143,105 @@ Java Model Exception: Java Model Status [OidcClient [in [Working copy] Config.ja
 	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
 !SUBENTRY 1 org.eclipse.jdt.core 4 969 2019-12-09 14:48:13.548
 !MESSAGE OidcClient [in [Working copy] Config.java [in it.eng.ms.config.model [in src/main/java [in eng-config]]]] does not exist
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-09 17:06:40.835
+!MESSAGE The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-09 17:06:40.839
+!MESSAGE The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-09 17:06:40.945
+!MESSAGE The artifact javax.xml:jaxb-api:jar:2.1 has been relocated to javax.xml.bind:jaxb-api:jar:2.1
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-09 17:06:43.967
+!MESSAGE The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-09 17:06:43.995
+!MESSAGE The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-09 17:06:44.105
+!MESSAGE The artifact javax.xml:jaxb-api:jar:2.1 has been relocated to javax.xml.bind:jaxb-api:jar:2.1
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-09 17:07:12.087
+!MESSAGE The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-09 17:07:12.090
+!MESSAGE The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-09 17:07:12.138
+!MESSAGE The artifact javax.xml:jaxb-api:jar:2.1 has been relocated to javax.xml.bind:jaxb-api:jar:2.1
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-09 17:07:24.907
+!MESSAGE The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-09 17:07:24.909
+!MESSAGE The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-09 17:07:24.952
+!MESSAGE The artifact javax.xml:jaxb-api:jar:2.1 has been relocated to javax.xml.bind:jaxb-api:jar:2.1
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-09 17:07:26.318
+!MESSAGE The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-09 17:07:26.322
+!MESSAGE The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-09 17:07:26.375
+!MESSAGE The artifact javax.xml:jaxb-api:jar:2.1 has been relocated to javax.xml.bind:jaxb-api:jar:2.1
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-09 17:07:39.058
+!MESSAGE The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-09 17:07:39.060
+!MESSAGE The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-09 17:07:39.108
+!MESSAGE The artifact javax.xml:jaxb-api:jar:2.1 has been relocated to javax.xml.bind:jaxb-api:jar:2.1
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-09 17:07:41.017
+!MESSAGE The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-09 17:07:41.051
+!MESSAGE The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-09 17:07:41.121
+!MESSAGE The artifact javax.xml:jaxb-api:jar:2.1 has been relocated to javax.xml.bind:jaxb-api:jar:2.1
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-09 17:07:53.104
+!MESSAGE The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-09 17:07:53.107
+!MESSAGE The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-09 17:07:53.154
+!MESSAGE The artifact javax.xml:jaxb-api:jar:2.1 has been relocated to javax.xml.bind:jaxb-api:jar:2.1
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-09 17:08:04.188
+!MESSAGE The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-09 17:08:04.191
+!MESSAGE The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-09 17:08:04.270
+!MESSAGE The artifact javax.xml:jaxb-api:jar:2.1 has been relocated to javax.xml.bind:jaxb-api:jar:2.1
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-09 17:08:04.612
+!MESSAGE The artifact javax.xml:jaxb-api:jar:2.1 has been relocated to javax.xml.bind:jaxb-api:jar:2.1
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-09 17:08:07.009
+!MESSAGE The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-09 17:08:07.013
+!MESSAGE The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-09 17:08:07.071
+!MESSAGE The artifact javax.xml:jaxb-api:jar:2.1 has been relocated to javax.xml.bind:jaxb-api:jar:2.1
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-09 17:08:08.463
+!MESSAGE The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-09 17:08:08.467
+!MESSAGE The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-09 17:08:08.527
+!MESSAGE The artifact javax.xml:jaxb-api:jar:2.1 has been relocated to javax.xml.bind:jaxb-api:jar:2.1

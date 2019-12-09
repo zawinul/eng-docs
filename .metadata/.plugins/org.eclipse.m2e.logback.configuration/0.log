@@ -425,3 +425,105 @@
 2019-12-09 14:55:36,238 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
 2019-12-09 14:55:36,240 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2019-12-09 14:55:36,240 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Workspace\eng-docs\eng-config\src\test\resources
+2019-12-09 17:06:40,230 [Worker-136] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: net.guides.springboot2:springboot2-jpa-swagger2:0.0.1-SNAPSHOT @ C:\Workspace\eng-docs\eng-config\pom.xml.
+2019-12-09 17:06:40,835 [Worker-136] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2019-12-09 17:06:40,839 [Worker-136] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2019-12-09 17:06:40,945 [Worker-136] WARN  o.e.m.c.i.embedder.EclipseLogger - The artifact javax.xml:jaxb-api:jar:2.1 has been relocated to javax.xml.bind:jaxb-api:jar:2.1
+2019-12-09 17:06:41,897 [Worker-136] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-12-09 17:06:41,897 [Worker-136] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-12-09 17:06:41,898 [Worker-136] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-12-09 17:06:41,899 [Worker-136] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-12-09 17:06:41,899 [Worker-136] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Workspace\eng-docs\eng-config\src\test\resources
+2019-12-09 17:06:43,967 [Worker-137] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2019-12-09 17:06:43,995 [Worker-137] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2019-12-09 17:06:44,105 [Worker-137] WARN  o.e.m.c.i.embedder.EclipseLogger - The artifact javax.xml:jaxb-api:jar:2.1 has been relocated to javax.xml.bind:jaxb-api:jar:2.1
+2019-12-09 17:06:44,317 [Worker-137] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-12-09 17:06:44,317 [Worker-137] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-12-09 17:06:44,319 [Worker-137] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-12-09 17:06:44,323 [Worker-137] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-12-09 17:06:44,323 [Worker-137] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Workspace\eng-docs\eng-config\src\test\resources
+2019-12-09 17:07:11,544 [Worker-142] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: net.guides.springboot2:springboot2-jpa-swagger2:0.0.1-SNAPSHOT @ C:\Workspace\eng-docs\eng-config\pom.xml.
+2019-12-09 17:07:12,087 [Worker-142] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2019-12-09 17:07:12,090 [Worker-142] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2019-12-09 17:07:12,138 [Worker-142] WARN  o.e.m.c.i.embedder.EclipseLogger - The artifact javax.xml:jaxb-api:jar:2.1 has been relocated to javax.xml.bind:jaxb-api:jar:2.1
+2019-12-09 17:07:12,436 [Worker-142] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-12-09 17:07:12,437 [Worker-142] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-12-09 17:07:12,437 [Worker-142] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-12-09 17:07:12,438 [Worker-142] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-12-09 17:07:12,438 [Worker-142] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Workspace\eng-docs\eng-config\src\test\resources
+2019-12-09 17:07:24,163 [Worker-137] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2019-12-09 17:07:24,448 [Worker-137] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: net.guides.springboot2:springboot2-jpa-swagger2:0.0.1-SNAPSHOT @ C:\Workspace\eng-docs\eng-config\pom.xml.
+2019-12-09 17:07:24,906 [Worker-137] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2019-12-09 17:07:24,909 [Worker-137] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2019-12-09 17:07:24,952 [Worker-137] WARN  o.e.m.c.i.embedder.EclipseLogger - The artifact javax.xml:jaxb-api:jar:2.1 has been relocated to javax.xml.bind:jaxb-api:jar:2.1
+2019-12-09 17:07:25,251 [Worker-137] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /eng-config/src/main/java
+2019-12-09 17:07:25,251 [Worker-137] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /eng-config/src/main/resources
+2019-12-09 17:07:25,252 [Worker-137] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /eng-config/src/main/resources
+2019-12-09 17:07:25,252 [Worker-137] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /eng-config/src/test/java
+2019-12-09 17:07:25,447 [Worker-137] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2019-12-09 17:07:26,318 [Worker-139] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2019-12-09 17:07:26,321 [Worker-139] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2019-12-09 17:07:26,374 [Worker-139] WARN  o.e.m.c.i.embedder.EclipseLogger - The artifact javax.xml:jaxb-api:jar:2.1 has been relocated to javax.xml.bind:jaxb-api:jar:2.1
+2019-12-09 17:07:26,506 [Worker-139] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-12-09 17:07:26,506 [Worker-139] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-12-09 17:07:26,507 [Worker-139] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-12-09 17:07:26,510 [Worker-139] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-12-09 17:07:26,510 [Worker-139] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Workspace\eng-docs\eng-config\src\test\resources
+2019-12-09 17:07:38,571 [Worker-137] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: net.guides.springboot2:springboot2-jpa-swagger2:0.0.1-SNAPSHOT @ C:\Workspace\eng-docs\eng-java-service\pom.xml.
+2019-12-09 17:07:39,057 [Worker-137] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2019-12-09 17:07:39,060 [Worker-137] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2019-12-09 17:07:39,108 [Worker-137] WARN  o.e.m.c.i.embedder.EclipseLogger - The artifact javax.xml:jaxb-api:jar:2.1 has been relocated to javax.xml.bind:jaxb-api:jar:2.1
+2019-12-09 17:07:39,438 [Worker-137] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-12-09 17:07:39,438 [Worker-137] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-12-09 17:07:39,439 [Worker-137] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-12-09 17:07:39,440 [Worker-137] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-12-09 17:07:39,441 [Worker-137] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Workspace\eng-docs\eng-java-service\src\test\resources
+2019-12-09 17:07:41,017 [Worker-142] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2019-12-09 17:07:41,051 [Worker-142] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2019-12-09 17:07:41,120 [Worker-142] WARN  o.e.m.c.i.embedder.EclipseLogger - The artifact javax.xml:jaxb-api:jar:2.1 has been relocated to javax.xml.bind:jaxb-api:jar:2.1
+2019-12-09 17:07:41,320 [Worker-140] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-12-09 17:07:41,321 [Worker-140] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-12-09 17:07:41,322 [Worker-140] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-12-09 17:07:41,326 [Worker-140] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-12-09 17:07:41,327 [Worker-140] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Workspace\eng-docs\eng-java-service\src\test\resources
+2019-12-09 17:07:52,660 [Worker-142] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: net.guides.springboot2:springboot2-jpa-swagger2:0.0.1-SNAPSHOT @ C:\Workspace\eng-docs\eng-java-service\pom.xml.
+2019-12-09 17:07:53,104 [Worker-142] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2019-12-09 17:07:53,107 [Worker-142] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2019-12-09 17:07:53,154 [Worker-142] WARN  o.e.m.c.i.embedder.EclipseLogger - The artifact javax.xml:jaxb-api:jar:2.1 has been relocated to javax.xml.bind:jaxb-api:jar:2.1
+2019-12-09 17:07:53,522 [Worker-142] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-12-09 17:07:53,522 [Worker-142] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-12-09 17:07:53,523 [Worker-142] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-12-09 17:07:53,524 [Worker-142] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-12-09 17:07:53,524 [Worker-142] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Workspace\eng-docs\eng-java-service\src\test\resources
+2019-12-09 17:08:03,392 [Worker-143] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2019-12-09 17:08:03,760 [Worker-143] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: net.guides.springboot2:springboot2-jpa-swagger2:0.0.1-SNAPSHOT @ C:\Workspace\eng-docs\eng-config\pom.xml.
+2019-12-09 17:08:04,188 [Worker-143] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2019-12-09 17:08:04,191 [Worker-143] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2019-12-09 17:08:04,270 [Worker-143] WARN  o.e.m.c.i.embedder.EclipseLogger - The artifact javax.xml:jaxb-api:jar:2.1 has been relocated to javax.xml.bind:jaxb-api:jar:2.1
+2019-12-09 17:08:04,604 [Worker-143] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: net.guides.springboot2:springboot2-jpa-swagger2:0.0.1-SNAPSHOT @ C:\Workspace\eng-docs\eng-java-service\pom.xml.
+2019-12-09 17:08:04,612 [Worker-143] WARN  o.e.m.c.i.embedder.EclipseLogger - The artifact javax.xml:jaxb-api:jar:2.1 has been relocated to javax.xml.bind:jaxb-api:jar:2.1
+2019-12-09 17:08:05,061 [Worker-143] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /eng-config/src/main/java
+2019-12-09 17:08:05,061 [Worker-143] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /eng-config/src/main/resources
+2019-12-09 17:08:05,062 [Worker-143] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /eng-config/src/main/resources
+2019-12-09 17:08:05,062 [Worker-143] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /eng-config/src/test/java
+2019-12-09 17:08:05,174 [Worker-143] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /eng-java-service/src/main/java
+2019-12-09 17:08:05,174 [Worker-143] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /eng-java-service/src/main/resources
+2019-12-09 17:08:05,174 [Worker-143] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /eng-java-service/src/main/resources
+2019-12-09 17:08:05,175 [Worker-143] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /eng-java-service/src/test/java
+2019-12-09 17:08:05,660 [Worker-143] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 2 sec
+2019-12-09 17:08:07,009 [Worker-139] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2019-12-09 17:08:07,012 [Worker-139] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2019-12-09 17:08:07,071 [Worker-139] WARN  o.e.m.c.i.embedder.EclipseLogger - The artifact javax.xml:jaxb-api:jar:2.1 has been relocated to javax.xml.bind:jaxb-api:jar:2.1
+2019-12-09 17:08:07,554 [Worker-139] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-12-09 17:08:07,555 [Worker-139] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-12-09 17:08:07,556 [Worker-139] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-12-09 17:08:07,562 [Worker-139] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-12-09 17:08:07,562 [Worker-139] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Workspace\eng-docs\eng-config\src\test\resources
+2019-12-09 17:08:08,462 [Worker-139] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2019-12-09 17:08:08,466 [Worker-139] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for javax.xml.bind:jaxb-api:jar:2.1 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2019-12-09 17:08:08,526 [Worker-139] WARN  o.e.m.c.i.embedder.EclipseLogger - The artifact javax.xml:jaxb-api:jar:2.1 has been relocated to javax.xml.bind:jaxb-api:jar:2.1
+2019-12-09 17:08:08,716 [Worker-139] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-12-09 17:08:08,716 [Worker-139] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-12-09 17:08:08,717 [Worker-139] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-12-09 17:08:08,721 [Worker-139] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-12-09 17:08:08,721 [Worker-139] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Workspace\eng-docs\eng-java-service\src\test\resources
