@@ -1,0 +1,13 @@
+package it.eng.model;
+
+import it.eng.model.SwaggerModel.Method;
+
+public class MethodEntry {
+	public String methodName;
+	public Method method;
+	
+	public MethodEntry(String methodName, Method method) {
+		this.methodName = methodName;
+		this.method = method;
+	}
+}

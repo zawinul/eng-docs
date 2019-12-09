@@ -1,0 +1,16 @@
+
+public class SwaggerModel {
+	public String openapi = "3.0.1";
+	public Info info;
+	
+	public SwaggerModel(Info info) {
+		
+	}
+
+	
+	public static class Info {
+		
+	}
+	
+
+}

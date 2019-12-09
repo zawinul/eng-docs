@@ -1,0 +1,12 @@
+{
+  "service": {
+    "prova": {
+      "config": {},
+      "info": {
+        "nome": "giovanni"
+      },
+      "endpoint": []
+    }
+  },
+  "app": {}
+}

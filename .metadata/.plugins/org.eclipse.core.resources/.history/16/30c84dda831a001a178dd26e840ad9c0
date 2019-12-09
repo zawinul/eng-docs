@@ -1,0 +1,33 @@
+package it.eng.ms.config.model;
+
+import java.util.List;
+
+public class Config {
+	public OidcProviderConfig oidcProviderConfig;
+	public OidcProviderInfo oidcProviderInfo;
+	public List<String> oidcProviderEndpoint;
+	
+	public Servizio1Config servizio1Config;
+	public Servizio1Info servizio1Info;
+	public List<String> servizio1Endpoint;
+	
+	public App1Config app1Config;
+	
+	public static class OidcProviderConfig {
+		
+	}
+	
+	public static class OidcProviderInfo {
+	}
+	
+	public static class Servizio1Config {
+	}
+	
+	public static class Servizio1Info {
+	}
+	
+	public static class App1Config {
+	}
+	
+
+}

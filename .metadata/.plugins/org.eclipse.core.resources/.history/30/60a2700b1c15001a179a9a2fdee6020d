@@ -1,0 +1,39 @@
+
+public class SwaggerModel {
+	public String openapi = "3.0.1";
+	public Info info;
+	public Server servers[];
+	public Path paths[];
+	public Components components;
+	
+	public SwaggerModel(Info info, Server servers[], Path paths[], Components components) {
+		this.info = info;
+		this.paths = paths;
+		this.components = components;
+		
+	}
+
+	
+	public static class Info {
+		public String title = "a service";
+		public String description = "A swagger model";
+		public String version = "1.0.0";
+		
+		public Info(String title, String description, String version) {
+			this.title = title;
+			this.description = description;
+			this.version = version;
+		}
+		
+	}
+	public static class Server {
+		public String url;
+	}
+	
+	public static class Path {}
+	public static class Components {
+		public Schema schemas;
+	}
+	
+
+}

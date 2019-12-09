@@ -1,0 +1,13 @@
+package it.eng.ms.config.model;
+
+import java.util.List;
+
+public class Config {
+	OidcProviderConfig oidcProviderConfig;
+	OidcProviderInfo oidcProviderInfo;
+	
+	public static class OidcProviderConfig{}
+	public static class OidcProviderInfo{
+		public static List<String> endpoiont;
+	}
+}

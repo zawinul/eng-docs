@@ -1,0 +1,5 @@
+package it.eng.ms.config.model;
+
+public class Config {
+
+}

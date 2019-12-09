@@ -1,0 +1,19 @@
+1575286817825	Delete element
+1575286855607	Rename package 'it.eng.model'
+1575301926955	Move type 'Schema' to new file
+1575301939954	Move type 'ObjSchema' to new file
+1575301951923	Move type 'ArraySchema' to new file
+1575302007652	Move compilation unit
+1575302032780	Move compilation unit
+1575302046142	Move compilation unit
+1575302287046	Move compilation unit
+1575305108587	Move type 'PathEntry' to new file
+1575305119242	Move type 'MethodEntry' to new file
+1575305144666	Rename type 'PathEntry'
+1575305283020	Rename type 'Path'
+1575305341438	Rename type 'Method'
+1575305355749	Rename type 'MethodEntry'
+1575305372040	Rename field 'methodName'
+1575305381064	Rename field 'method'
+1575305391519	Rename local variable 'method'
+1575305600666	Move type 'Parameter' to new file

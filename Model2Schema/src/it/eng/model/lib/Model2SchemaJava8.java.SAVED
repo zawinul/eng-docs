@@ -1,0 +1,81 @@
+package it.eng.sa.model.lib;
+
+
+import java.lang.reflect.Field;
+import java.lang.reflect.Type;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class Model2SchemaJava8 {
+	public static Schema getSchema(Type t, String genType) throws Exception {
+		ObjSchema s = new ObjSchema();
+		//System.out.println("T="+t.getTypeName());
+		if (t.getTypeName().equals("double"))
+			return new Schema("number");
+		if (t.getTypeName().equals("int"))
+			return new Schema("number");
+		if (t.getTypeName().equals("boolean"))
+			return new Schema("boolean");
+		
+		Class c = (Class) t;
+		if (String.class.isAssignableFrom(c)) 
+			return new Schema("string");
+		if (int.class==c || double.class==c  || float.class==c || long.class==c || Integer.class==c || Double.class==c || Float.class==c || Long.class==c || BigDecimal.class==c || BigInteger.class==c) 
+			return new Schema("number");
+		if (boolean.class==c || Boolean.class==c)
+			return new Schema("boolean");
+
+		if (genType!=null && genType.endsWith("[]")) {
+			ArraySchema ret = new ArraySchema();
+			String cname = genType.substring(0, genType.length()-2);
+			Class c3 = Class.forName(cname);
+			Schema schild = getSchema(c3,  null);
+			ret.items = schild;
+			return ret;			
+		}
+		if (List.class.isAssignableFrom(c)) {
+			ArraySchema ret = new ArraySchema();
+			String cname = genType.substring(genType.indexOf("<")+1, genType.indexOf(">"));
+			Class c3 = Class.forName(cname);
+			Schema schild = getSchema(c3,  null);
+			ret.items = schild;
+			return ret;
+		}
+		
+		for (Field f: c.getDeclaredFields()) {
+			Type ft = f.getType();
+			Schema child = getSchema(ft, f.getGenericType().getTypeName());
+			s.properties.put(f.getName(), child);
+		}
+		return s;
+	}
+
+	public static class Schema extends Model {
+		public Schema(String t) {
+			type = t;
+		}
+		public Schema() {}
+		public String type;
+	}
+	
+	public static class ObjSchema extends Schema {
+		public String type = "object";
+		public Map<String, Schema> properties = new HashMap<String, Schema>();		
+	}
+
+	
+	public static class ArraySchema extends Schema {
+		public String type = "array";
+        public Schema items;
+	}
+	
+	public static void main(String args[]) throws Exception {
+		Class c = Configuration.class;
+		//Class c = FatturaModel.FatturaElettronicaType.class;
+		Schema s = getSchema(c, null);
+		System.out.println(s);
+	}
+}

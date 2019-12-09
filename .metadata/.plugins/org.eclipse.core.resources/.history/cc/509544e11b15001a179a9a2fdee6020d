@@ -1,0 +1,9 @@
+package it.eng.model.lib;
+
+public class Schema  {
+	public Schema(String t) {
+		type = t;
+	}
+	public Schema() {}
+	public String type;
+}

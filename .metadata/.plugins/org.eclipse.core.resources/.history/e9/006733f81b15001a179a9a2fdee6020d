@@ -1,0 +1,8 @@
+package it.eng.model.lib;
+
+import it.eng.model.schema.Schema;
+
+public class ArraySchema extends Schema {
+	public String type = "array";
+    public Schema items;
+}
