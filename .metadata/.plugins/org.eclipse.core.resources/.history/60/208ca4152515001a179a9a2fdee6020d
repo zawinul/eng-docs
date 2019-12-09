@@ -1,8 +1,0 @@
-package it.eng.model;
-
-import it.eng.model.SwaggerModel.ParameterDefinition;
-
-public class Parameter {
-	public String name;
-	public ParameterDefinition definition;
-}
