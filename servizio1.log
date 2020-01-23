@@ -1,0 +1,21 @@
+{"message":"logger started","level":"info","service":"servizio1"}
+{"message":"starting servizio1","level":"info","service":"servizio1"}
+{"message":"required port 6543","level":"info","service":"servizio1"}
+{"message":"obtained port 6543","level":"info","service":"servizio1"}
+{"message":"starting on port 6543","level":"info","service":"servizio1"}
+{"message":"URL: http://localhost:6543/","level":"info","service":"servizio1"}
+{"message":"service servizio1 started!","level":"info","service":"servizio1"}
+{"message":"HTTP server started at port http://localhost:6543/","level":"info","service":"servizio1"}
+{"message":"STARTED!!!","level":"info","service":"servizio1"}
+{"message":"errore: la richiesta dovrebbe contenere l'header 'Authorization: Bearer <accessToken>'","level":"error","service":"servizio1"}
+{"message":"errore: la richiesta dovrebbe contenere l'header 'Authorization: Bearer <accessToken>'","level":"error","service":"servizio1"}
+{"message":"logger started","level":"info","service":"servizio1"}
+{"message":"starting servizio1","level":"info","service":"servizio1"}
+{"message":"required port 6543","level":"info","service":"servizio1"}
+{"message":"obtained port 6543","level":"info","service":"servizio1"}
+{"message":"starting on port 6543","level":"info","service":"servizio1"}
+{"message":"URL: http://localhost:6543/","level":"info","service":"servizio1"}
+{"message":"service servizio1 started!","level":"info","service":"servizio1"}
+{"message":"HTTP server started at port http://localhost:6543/","level":"info","service":"servizio1"}
+{"message":"STARTED!!!","level":"info","service":"servizio1"}
+{"message":"errore: la richiesta dovrebbe contenere l'header 'Authorization: Bearer <accessToken>'","level":"error","service":"servizio1"}

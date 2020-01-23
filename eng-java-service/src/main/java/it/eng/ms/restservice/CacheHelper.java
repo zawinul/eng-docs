@@ -18,6 +18,10 @@ public class CacheHelper {
 	
 	private static Logger logger = LoggerFactory.getLogger("cache");
 
+	static {
+		init();
+	}
+	
 	public static void init() {
 		_init();
 	}

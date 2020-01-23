@@ -3,12 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>net.guides.springboot2</groupId>
-	<artifactId>springboot2-jpa-swagger2</artifactId>
+	<groupId>1t.eng.ms</groupId>
+	<artifactId>eng-config</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>springboot2-jpa-swagger2</name>
+	<name>eng-config</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -89,6 +89,14 @@
 			<artifactId>json</artifactId>
 			<version>20190722</version>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind 
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.9.8</version>
+		</dependency>
+-->
 
 	</dependencies>
 

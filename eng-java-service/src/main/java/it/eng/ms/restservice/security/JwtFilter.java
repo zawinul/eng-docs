@@ -1,8 +1,7 @@
 package it.eng.ms.restservice.security;
 
-
-
 import it.eng.ms.restservice.CacheHelper;
+import it.eng.ms.restservice.ContextService;
 import it.eng.ms.restservice.exception.ForbiddenException;
 
 import java.io.IOException;
@@ -15,41 +14,32 @@ import javax.servlet.http.HttpServletResponse;
 import org.jose4j.jwt.JwtClaims;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.web.servlet.FilterRegistrationBean;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 @Configuration
-public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
+public class JwtFilter extends OncePerRequestFilter {
+	
+	@Autowired
+	private ContextService cfg;
 
-	@Value( "${filterpath}" )
-	private String filterPath;
-
-	@Bean
-	public FilterRegistrationBean<JwtAuthenticationTokenFilter> loggingFilter(){
-		System.out.println("FilterRegistrationBean");
-	    FilterRegistrationBean<JwtAuthenticationTokenFilter> registrationBean 
-	      = new FilterRegistrationBean<>();
-	         
-	    registrationBean.setFilter(new JwtAuthenticationTokenFilter());
-	    registrationBean.addUrlPatterns(filterPath);
-	         
-	    CacheHelper.init();
-	    return registrationBean;    
-	}
-
-	private static 	EngOidcTokenVerifier verifier = null;
 	private final String BEARER_PREFIX = "Bearer ";
 	
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws ServletException, IOException {
         
+		boolean disabled = "true".equals(cfg.getProperty("debugBypassAuthorization"));
+		
+
     	//System.out.println(request.getRequestURI());
     	
     	// per le richieste "public/*" non serve il token
     	if (request.getRequestURI().startsWith("/public/")) {
+	        chain.doFilter(request, response);
+	        return;
+    	}
+    	
+    	if (disabled) {
 	        chain.doFilter(request, response);
 	        return;
     	}

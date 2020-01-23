@@ -5,30 +5,37 @@
  *
  */
 
-package it.eng.sample;
+package it.eng.config;
 
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
-@ComponentScan("it.eng.ms.restservice")
-@ComponentScan("it.eng.sample")
-//@SpringBootApplication(scanBasePackages="it.eng.sample, it.eng.ms.restservice")
+
+
+@ComponentScan(basePackages = { "it.eng.config", "it.eng.ms.restservice", "it.eng.ms.restservice.security"} )
 @SpringBootApplication
+@Configuration
 public class Main {
-	
+
 	
 	public static void main(String[] args) {
-		
-		ConfigurableApplicationContext ctx;
-		ctx = SpringApplication.run(Main.class, args);
-		String port = ctx.getEnvironment().getProperty("server.port");
-		
-		System.out.println("\n\n\tSTARTED ON PORT "+port+"\n");  
+		ApplicationContext c = SpringApplication.run(Main.class, args);
+		c.getBean(Main.class, c);
+		String port = c.getEnvironment().getProperty("server.port");
+		System.out.println("\n\n\tSTARTED ON PORT "+port+"\n");
 		System.out.println("\thttp://localhost:"+port+"/api/v1/...");
 		System.out.println("\thttp://localhost:"+port+"/v2/api-docs");
 		System.out.println("\thttp://localhost:"+port+"/swagger-ui.html");
 	}
+	
+	@Bean
+	public String servicesBasePackage() {
+		return "it.eng.config";
+	}
+	
 }

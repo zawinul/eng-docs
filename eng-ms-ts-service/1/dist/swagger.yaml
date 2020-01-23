@@ -1,0 +1,345 @@
+openapi: 3.0.0
+info:
+    description: 'A Sample application using Typescipt-rest library'
+    license:
+        name: MIT
+    title: 'Typescript-rest Boilerplate Application'
+    version: 0.0.1
+paths:
+    /hello-admins:
+        get:
+            operationId: HelloAdminGetAllAdmins
+            responses:
+                '200':
+                    description: Ok
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    $ref: '#/components/schemas/AdminModel'
+            description: 'Returns a list of admins'
+        post:
+            operationId: HelloAdminCreateAdmin
+            responses:
+                '200':
+                    description: Ok
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/AdminModel'
+            description: 'Creates an admin'
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/AdminModel'
+                description: 'admin data'
+                required: true
+    '/hello-admins/{id}':
+        get:
+            operationId: HelloAdminGetAdmin
+            responses:
+                '200':
+                    description: Ok
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/AdminModel'
+            description: 'Returns an admin'
+            parameters:
+                -
+                    description: 'admin identity'
+                    in: path
+                    name: id
+                    required: true
+                    schema:
+                        type: string
+        delete:
+            operationId: HelloAdminDeleteAdmin
+            responses:
+                '200':
+                    description: Ok
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/AdminModel'
+            description: 'Deletes an admin'
+            parameters:
+                -
+                    description: 'admin identity'
+                    in: path
+                    name: id
+                    required: true
+                    schema:
+                        type: string
+    '/hello-auth/{name}':
+        get:
+            operationId: HelloAuthenticationSayHello
+            responses:
+                '200':
+                    description: Ok
+                    content:
+                        text/html:
+                            schema:
+                                type: string
+            description: 'Send a greeting message.'
+            security:
+                -
+                    default: []
+            parameters:
+                -
+                    description: 'The name that will receive our greeting message'
+                    in: path
+                    name: name
+                    required: true
+                    schema:
+                        type: string
+    '/hello-auth/secondAuth/{name}':
+        get:
+            operationId: HelloAuthenticationSayHelloSecondAuth
+            responses:
+                '200':
+                    description: Ok
+                    content:
+                        text/html:
+                            schema:
+                                type: string
+            description: 'Send a greeting message.'
+            security:
+                -
+                    secondAuthenticator:
+                        - '*'
+            parameters:
+                -
+                    description: 'The name that will receive our greeting message'
+                    in: path
+                    name: name
+                    required: true
+                    schema:
+                        type: string
+    '/hello/{name}':
+        get:
+            operationId: HelloSayHello
+            responses:
+                '200':
+                    description: Ok
+                    content:
+                        text/html:
+                            schema:
+                                type: string
+            description: 'Send a greeting message.'
+            parameters:
+                -
+                    description: 'The name that will receive our greeting message'
+                    in: path
+                    name: name
+                    required: true
+                    schema:
+                        type: string
+    '/hello-ioc-direct/{name}':
+        get:
+            operationId: HelloIocDirectSayHello
+            responses:
+                '204':
+                    description: 'No content'
+            description: 'Send a greeting message.'
+            parameters:
+                -
+                    description: 'The name that will receive our greeting message'
+                    in: path
+                    name: name
+                    required: true
+                    schema:
+                        type: string
+    '/hello-ioc-base/{name}':
+        get:
+            operationId: HelloIocInterfaceSayHello
+            responses:
+                '204':
+                    description: 'No content'
+            description: 'Send a greeting message.'
+            parameters:
+                -
+                    description: 'The name that will receive our greeting message'
+                    in: path
+                    name: name
+                    required: true
+                    schema:
+                        type: string
+    /hello-objects:
+        get:
+            operationId: HelloObjectSayArrayObjectHello
+            responses:
+                '200':
+                    description: Ok
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    $ref: '#/components/schemas/SimpleHello'
+            description: 'Send a list of objects with greeting message.'
+    '/hello-objects/{name}/types':
+        get:
+            operationId: HelloObjectSaySimpleHelloTypes
+            responses:
+                '200':
+                    description: Ok
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    $ref: '#/components/schemas/SimpleHelloType'
+            description: 'Send a list of typed objects with greeting message.'
+            parameters:
+                -
+                    description: 'The name that will receive our greeting message'
+                    in: path
+                    name: name
+                    required: true
+                    schema:
+                        type: string
+    '/hello-objects/{name}/types/{typeName}':
+        get:
+            operationId: HelloObjectSaySimpleHelloType
+            responses:
+                '200':
+                    description: Ok
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/SimpleHelloType'
+            description: 'Send a list of typed objects with greeting message.'
+            parameters:
+                -
+                    description: 'The name that will receive our greeting message'
+                    in: path
+                    name: name
+                    required: true
+                    schema:
+                        type: string
+                -
+                    description: 'The typeName that will receive our greeting message'
+                    in: path
+                    name: typeName
+                    required: true
+                    schema:
+                        type: string
+    '/hello-objects/{name}':
+        get:
+            operationId: HelloObjectSayObjectHello
+            responses:
+                '200':
+                    description: Ok
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/SimpleHello'
+            description: 'Send a object with greeting message.'
+            parameters:
+                -
+                    description: 'The name that will receive our greeting message'
+                    in: path
+                    name: name
+                    required: true
+                    schema:
+                        type: string
+    '/hello-objects/{name}/promises':
+        get:
+            operationId: HelloObjectSayArrayObjectPromiseHello
+            responses:
+                '200':
+                    description: Ok
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    $ref: '#/components/schemas/SimpleHello'
+            description: 'Send a list of objects with greeting message wrapped in Promise'
+            parameters:
+                -
+                    description: 'The name that will receive our greeting message'
+                    in: path
+                    name: name
+                    required: true
+                    schema:
+                        type: string
+    '/hello-objects/{name}/promises/{promiseName}':
+        get:
+            operationId: HelloObjectSayObjectPromiseHello
+            responses:
+                '200':
+                    description: Ok
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/SimpleHello'
+            description: 'Send a object with greeting message wrapped in Promise'
+            parameters:
+                -
+                    description: 'The name that will receive our greeting message'
+                    in: path
+                    name: name
+                    required: true
+                    schema:
+                        type: string
+                -
+                    description: 'The promiseName that will receive our greeting message'
+                    in: path
+                    name: promiseName
+                    required: true
+                    schema:
+                        type: string
+components:
+    securitySchemes:
+        default:
+            type: apiKey
+            in: header
+            name: Authorization
+        secondAuthenticator:
+            type: apiKey
+            in: header
+            name: Authorization
+    schemas:
+        AdminModel:
+            description: ""
+            properties:
+                name:
+                    type: string
+                    description: ""
+                email:
+                    type: string
+                    description: ""
+                password:
+                    type: string
+                    description: ""
+                role:
+                    type: string
+                    description: ""
+            type: object
+            required:
+                - name
+                - email
+                - password
+                - role
+        SimpleHello:
+            description: 'Simple model class'
+            properties:
+                greeting:
+                    type: string
+                    description: ""
+            type: object
+            required:
+                - greeting
+        SimpleHelloType:
+            description: ""
+            properties:
+                greeting:
+                    type: string
+                    description: ""
+            type: object
+            required:
+                - greeting

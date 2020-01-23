@@ -8,6 +8,10 @@
 package it.eng.ms.restservice;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.wiring.BeanWiringInfo;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -22,10 +26,14 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class SwaggerInfo {
+	
+	@Autowired
+	public String servicesBasePackage;
+	
 	@Bean
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2).select()
-				.apis(RequestHandlerSelectors.basePackage("it.eng.sample"))
+				.apis(RequestHandlerSelectors.basePackage(servicesBasePackage))
 				.paths(PathSelectors.regex("/.*"))
 				.build().apiInfo(apiEndPointsInfo());
 	}
