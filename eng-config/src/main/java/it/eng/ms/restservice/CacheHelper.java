@@ -37,7 +37,7 @@ public class CacheHelper {
 	}
 
 	// PRIVATE ---
-	private static JwtClaims nullJwtClaims = new JwtClaims();
+	//private static JwtClaims nullJwtClaims = new JwtClaims();
 	public static JwtClaims tokenToClaims(String token) {
 		
 		logger.debug("token to claims "+token);

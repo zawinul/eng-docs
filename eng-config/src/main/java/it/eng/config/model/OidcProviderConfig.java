@@ -10,7 +10,7 @@ public class OidcProviderConfig {
 	public String url = "https://oidc-provider:3043";
 	
 
-	private static class OidcClaims {
+	public static class OidcClaims {
 		public String name;
 		public List<String> values = new ArrayList<String>();
 	}

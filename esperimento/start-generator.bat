@@ -1,0 +1,1 @@
+java -jar openapi-generator-cli-4.2.3.jar generate -i myapi.yaml -o out/ -g nodejs-express-server

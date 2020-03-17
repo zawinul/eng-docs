@@ -1,0 +1,297 @@
+{
+  "swagger": "2.0",
+  "info":
+    {
+      "description": "Engineering registry API",
+      "version": "1.0.0",
+      "title": "Engineering registry API"
+    },
+  "host": "127.0.0.1:5678",
+  "basePath": "/",
+  "tags":
+    [
+      {
+        "name": "eng-config-controller",
+        "description": "Eng Config Controller"
+      }
+    ],
+  "paths":
+    {
+      "/api/v1/app/config/{appName}":
+        {
+          "get":
+            {
+              "tags": ["eng-config-controller"],
+              "summary": "Legge il config di un app",
+              "operationId": "getAppConfigUsingGET",
+              "produces": ["*/*"],
+              "parameters":
+                [
+                  {
+                    "name": "appName",
+                    "in": "path",
+                    "description": "appName",
+                    "required": true,
+                    "type": "string"
+                  }
+                ],
+              "responses":
+                {
+                  "200":
+                    { "description": "OK", "schema": { "type": "object" } },
+                  "401": { "description": "Unauthorized" },
+                  "403": { "description": "Forbidden" },
+                  "404": { "description": "Not Found" }
+                }
+            },
+          "put":
+            {
+              "tags": ["eng-config-controller"],
+              "summary": "Scrive il config di un app",
+              "operationId": "setAppConfigUsingPUT",
+              "consumes": ["application/json"],
+              "produces": ["*/*"],
+              "parameters":
+                [
+                  {
+                    "name": "appName",
+                    "in": "path",
+                    "description": "appName",
+                    "required": true,
+                    "type": "string"
+                  },
+                  {
+                    "in": "body",
+                    "name": "info",
+                    "description": "info",
+                    "required": true,
+                    "schema": { "type": "object" }
+                  }
+                ],
+              "responses":
+                {
+                  "200":
+                    { "description": "OK", "schema": { "type": "object" } },
+                  "201": { "description": "Created" },
+                  "401": { "description": "Unauthorized" },
+                  "403": { "description": "Forbidden" },
+                  "404": { "description": "Not Found" }
+                }
+            }
+        },
+      "/api/v1/service/config/{serviceName}":
+        {
+          "get":
+            {
+              "tags": ["eng-config-controller"],
+              "summary": "Legge il config di un servizio",
+              "operationId": "getServiceConfigUsingGET",
+              "produces": ["application/json"],
+              "parameters":
+                [
+                  {
+                    "name": "serviceName",
+                    "in": "path",
+                    "description": "serviceName",
+                    "required": true,
+                    "type": "string"
+                  }
+                ],
+              "responses":
+                {
+                  "200":
+                    { "description": "OK", "schema": { "type": "object" } },
+                  "401": { "description": "Unauthorized" },
+                  "403": { "description": "Forbidden" },
+                  "404": { "description": "Not Found" }
+                }
+            },
+          "put":
+            {
+              "tags": ["eng-config-controller"],
+              "summary": "Scrive il config di un servizio",
+              "operationId": "setServiceConfigUsingPUT",
+              "consumes": ["application/json"],
+              "produces": ["*/*"],
+              "parameters":
+                [
+                  {
+                    "name": "serviceName",
+                    "in": "path",
+                    "description": "serviceName",
+                    "required": true,
+                    "type": "string"
+                  },
+                  {
+                    "in": "body",
+                    "name": "info",
+                    "description": "info",
+                    "required": true,
+                    "schema": { "type": "object" }
+                  }
+                ],
+              "responses":
+                {
+                  "200":
+                    { "description": "OK", "schema": { "type": "object" } },
+                  "201": { "description": "Created" },
+                  "401": { "description": "Unauthorized" },
+                  "403": { "description": "Forbidden" },
+                  "404": { "description": "Not Found" }
+                }
+            }
+        },
+      "/api/v1/service/endpoint":
+        {
+          "post":
+            {
+              "tags": ["eng-config-controller"],
+              "summary": "Salva l'endpoint, con expire",
+              "operationId": "postEndpointUsingPOST",
+              "consumes": ["application/json"],
+              "produces": ["*/*"],
+              "parameters":
+                [
+                  {
+                    "in": "body",
+                    "name": "info",
+                    "description": "info",
+                    "required": true,
+                    "schema": { "$ref": "#/definitions/CachedEndpoint" }
+                  }
+                ],
+              "responses":
+                {
+                  "200":
+                    { "description": "OK", "schema": { "type": "object" } },
+                  "201": { "description": "Created" },
+                  "401": { "description": "Unauthorized" },
+                  "403": { "description": "Forbidden" },
+                  "404": { "description": "Not Found" }
+                }
+            }
+        },
+      "/api/v1/service/endpoint/all":
+        {
+          "get":
+            {
+              "tags": ["eng-config-controller"],
+              "summary": "ritorna l'elenco di tutti gli endpoint attivi",
+              "operationId": "getAllEndpointUsingGET",
+              "produces": ["*/*"],
+              "responses":
+                {
+                  "200":
+                    { "description": "OK", "schema": { "type": "object" } },
+                  "401": { "description": "Unauthorized" },
+                  "403": { "description": "Forbidden" },
+                  "404": { "description": "Not Found" }
+                }
+            }
+        },
+      "/api/v1/service/endpoint/{serviceName}":
+        {
+          "get":
+            {
+              "tags": ["eng-config-controller"],
+              "summary": "dato un serviceName ritorna l'elenco degli URL degli endpoint attivi",
+              "operationId": "getEndpointUsingGET",
+              "produces": ["*/*"],
+              "parameters":
+                [
+                  {
+                    "name": "serviceName",
+                    "in": "path",
+                    "description": "serviceName",
+                    "required": true,
+                    "type": "string"
+                  }
+                ],
+              "responses":
+                {
+                  "200":
+                    { "description": "OK", "schema": { "type": "object" } },
+                  "401": { "description": "Unauthorized" },
+                  "403": { "description": "Forbidden" },
+                  "404": { "description": "Not Found" }
+                }
+            }
+        },
+      "/api/v1/service/info/{serviceName}":
+        {
+          "get":
+            {
+              "tags": ["eng-config-controller"],
+              "summary": "Legge l'info di un servizio",
+              "operationId": "getServiceInfoUsingGET",
+              "produces": ["*/*"],
+              "parameters":
+                [
+                  {
+                    "name": "serviceName",
+                    "in": "path",
+                    "description": "serviceName",
+                    "required": true,
+                    "type": "string"
+                  }
+                ],
+              "responses":
+                {
+                  "200":
+                    { "description": "OK", "schema": { "type": "object" } },
+                  "401": { "description": "Unauthorized" },
+                  "403": { "description": "Forbidden" },
+                  "404": { "description": "Not Found" }
+                }
+            },
+          "put":
+            {
+              "tags": ["eng-config-controller"],
+              "summary": "Scrive l'info di un servizio",
+              "operationId": "setServiceInfoUsingPUT",
+              "consumes": ["application/json"],
+              "produces": ["*/*"],
+              "parameters":
+                [
+                  {
+                    "name": "serviceName",
+                    "in": "path",
+                    "description": "serviceName",
+                    "required": true,
+                    "type": "string"
+                  },
+                  {
+                    "in": "body",
+                    "name": "info",
+                    "description": "info",
+                    "required": true,
+                    "schema": { "type": "object" }
+                  }
+                ],
+              "responses":
+                {
+                  "200":
+                    { "description": "OK", "schema": { "type": "object" } },
+                  "201": { "description": "Created" },
+                  "401": { "description": "Unauthorized" },
+                  "403": { "description": "Forbidden" },
+                  "404": { "description": "Not Found" }
+                }
+            }
+        }
+    },
+  "definitions":
+    {
+      "CachedEndpoint":
+        {
+          "type": "object",
+          "properties":
+            {
+              "expire": { "type": "integer", "format": "int64" },
+              "name": { "type": "string" },
+              "url": { "type": "string" }
+            },
+          "title": "CachedEndpoint"
+        }
+    }
+}

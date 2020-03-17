@@ -93,6 +93,7 @@ public class SampleController {
 	public Map<String, Boolean> deleteEmployee(
 			@ApiParam(value = "Employee Id from which employee object will delete from database table", required = true)
 			@PathVariable(value = "id") Long employeeId)  {
+		@SuppressWarnings("unused")
 		Employee employee = db.get(employeeId);
 		db.remove(employeeId);
 		Map<String, Boolean> response = new HashMap<>();
