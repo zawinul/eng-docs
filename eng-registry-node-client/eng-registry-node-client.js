@@ -155,4 +155,14 @@ async function create(engRegisterEndpoints) {
 	};
 }
 
-module.exports = { create: create};
+async function get(engRegisterEndpoints) {
+	if (!get.singleton)
+		get.singleton = create(engRegisterEndpoints);
+
+	return get.singleton;
+}
+
+module.exports = { 
+	create: create,
+	get:get
+};
