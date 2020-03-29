@@ -1,0 +1,10 @@
+.r3-richiesta-conferma {
+	overflow: hidden;
+}
+
+.r3-richiesta-conferma .isDisabled {
+	color: currentColor;
+	cursor: not-allowed;
+	opacity: 0.5;
+	text-decoration: none;
+}

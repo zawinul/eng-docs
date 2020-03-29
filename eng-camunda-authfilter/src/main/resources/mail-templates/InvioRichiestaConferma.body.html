@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>MAIL</title>
+	<style>
+		body {
+			width: 90%;
+			padding: 5%;
+		}https://127.0.0.1:91/#/r3/
+
+		.ptitle {
+			width:20%;
+			float:left;
+			clear:left;
+			font-weight: bold;
+		}
+		.pcontent {
+			width: 79%;
+			float:left;
+			clear:right;
+			border: 1px solid lightgray;
+		}
+	</style>
+</head>
+<body>
+	<p>Gentile utente,</p>
+	<p>
+		La preghiamo di verificare l'invio di una R3. 
+	</p>
+	<h3>PARAMETRI</h3>
+	<div class="ptitle">Mittente</div>
+	<div class="pcontent">${mittente}</div>
+	<div class="ptitle">Destinatario</div>
+	<div class="pcontent">${destinatario}</div>
+	<div class="ptitle">Oggetto</div>
+	<div class="pcontent">${oggetto}</div>
+	<div class="ptitle">Testo</div>
+	<div class="pcontent"><pre>${testo}</pre></div>
+
+	<div style=" 
+			float: right;
+			margin: 8px;
+			width: 120px;
+			height:20px;
+			background-color: #f8f8f8;
+			text-align: center;
+			font-family: arial;
+			border: 1px solid gray;
+			border-radius: 8px;
+			padding: 8px;
+		">
+		<a href="https://engapp:91/#/r3/conferma?id=${processId}">
+			<div>Procedi</div>
+		</a>
+	</div>	
+			
+</body>
+</html>
+

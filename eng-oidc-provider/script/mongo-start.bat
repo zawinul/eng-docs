@@ -1,0 +1,1 @@
+c:\mongo\bin\mongod --dbpath c:\temp\mongo-eng-docs

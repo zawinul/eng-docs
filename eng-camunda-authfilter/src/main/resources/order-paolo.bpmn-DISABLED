@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="1.13.0">
+  <bpmn:process id="order-paolo" name="Order-paolo" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_OrderPlaced" name="Order placed">
+      <bpmn:outgoing>SequenceFlow_0elkbea</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_0elkbea" sourceRef="StartEvent_OrderPlaced" targetRef="ServiceTask_RetrievePayment" />
+    <bpmn:serviceTask id="ServiceTask_RetrievePayment" name="Retrieve payment" camunda:asyncBefore="true" camunda:delegateExpression="#{retrievePaymentAdapter}">
+      <bpmn:extensionElements>
+        <camunda:failedJobRetryTimeCycle>R5/PT1M</camunda:failedJobRetryTimeCycle>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0elkbea</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0ku8e1v</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="ServiceTask_ShipGoods" name="Ship goods" camunda:delegateExpression="#{sendShipGoodsAmqpAdapter}">
+      <bpmn:incoming>SequenceFlow_19jahn3</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_12j6m4a</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="EndEvent_OrderShipped" name="Order shipped">
+      <bpmn:incoming>SequenceFlow_0e88tbe</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_12j6m4a" sourceRef="ServiceTask_ShipGoods" targetRef="ReceiveTask_WaitForGoodsShipped" />
+    <bpmn:sequenceFlow id="SequenceFlow_13f7q4z" sourceRef="ReceiveTask_WaitForGoodsShipped" targetRef="IntermediateThrowEvent_10qjrod" />
+    <bpmn:receiveTask id="ReceiveTask_WaitForGoodsShipped" name="Wait for goods shipped" messageRef="Message_1qt9m10">
+      <bpmn:incoming>SequenceFlow_12j6m4a</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_13f7q4z</bpmn:outgoing>
+    </bpmn:receiveTask>
+    <bpmn:sequenceFlow id="SequenceFlow_0e88tbe" sourceRef="IntermediateThrowEvent_10qjrod" targetRef="EndEvent_OrderShipped" />
+    <bpmn:intermediateCatchEvent id="IntermediateThrowEvent_10qjrod" name="Wait 5 minutes">
+      <bpmn:incoming>SequenceFlow_13f7q4z</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0e88tbe</bpmn:outgoing>
+      <bpmn:timerEventDefinition>
+        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">PT5M</bpmn:timeDuration>
+      </bpmn:timerEventDefinition>
+    </bpmn:intermediateCatchEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_0ku8e1v" sourceRef="ServiceTask_RetrievePayment" targetRef="provapippo" />
+    <bpmn:serviceTask id="provapippo" name="provapippo" camunda:delegateExpression="#{paoloAdapter}">
+      <bpmn:extensionElements>
+        <camunda:field name="aaa">
+          <camunda:string>prova-aaa</camunda:string>
+        </camunda:field>
+        <camunda:field name="bbb" stringValue="Hello World" />
+        <camunda:field name="text2">
+          <camunda:expression>esempio</camunda:expression>
+        </camunda:field>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0ku8e1v</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0o8yc67</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="SequenceFlow_0o8yc67" sourceRef="provapippo" targetRef="sendmail" />
+    <bpmn:sequenceFlow id="SequenceFlow_19jahn3" sourceRef="sendmail" targetRef="ServiceTask_ShipGoods" />
+    <bpmn:serviceTask id="sendmail" name="sendmail" camunda:delegateExpression="#{sendMailAdapter}">
+      <bpmn:incoming>SequenceFlow_0o8yc67</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_19jahn3</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:textAnnotation id="TextAnnotation_1b1jpxr">
+      <bpmn:text>REST</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_0cosab0" sourceRef="ServiceTask_RetrievePayment" targetRef="TextAnnotation_1b1jpxr" />
+    <bpmn:textAnnotation id="TextAnnotation_0yrfov9">
+      <bpmn:text>REST</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_1d8atu6" sourceRef="StartEvent_OrderPlaced" targetRef="TextAnnotation_0yrfov9" />
+    <bpmn:textAnnotation id="TextAnnotation_1ssg80u">
+      <bpmn:text>AMQP</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_0s6v9gu" sourceRef="ServiceTask_ShipGoods" targetRef="TextAnnotation_1ssg80u" />
+    <bpmn:textAnnotation id="TextAnnotation_0vhmt72">
+      <bpmn:text>AMQP</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_0sj35vl" sourceRef="ReceiveTask_WaitForGoodsShipped" targetRef="TextAnnotation_0vhmt72" />
+  </bpmn:process>
+  <bpmn:message id="Message_1qt9m10" name="Message_GoodsShipped" />
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="order-paolo">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_OrderPlaced">
+        <dc:Bounds x="173" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="159" y="138" width="64" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0elkbea_di" bpmnElement="SequenceFlow_0elkbea">
+        <di:waypoint x="209" y="120" />
+        <di:waypoint x="265" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="237" y="99" width="0" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ServiceTask_0tkuf59_di" bpmnElement="ServiceTask_RetrievePayment">
+        <dc:Bounds x="265" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_1b1jpxr_di" bpmnElement="TextAnnotation_1b1jpxr">
+        <dc:Bounds x="331.5470737913486" y="8.223070398642932" width="100" height="30" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_0cosab0_di" bpmnElement="Association_0cosab0">
+        <di:waypoint x="343" y="80" />
+        <di:waypoint x="371" y="38" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="TextAnnotation_0yrfov9_di" bpmnElement="TextAnnotation_0yrfov9">
+        <dc:Bounds x="159.5470737913486" y="19.223070398642932" width="100" height="30" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_1d8atu6_di" bpmnElement="Association_1d8atu6">
+        <di:waypoint x="195" y="103" />
+        <di:waypoint x="207" y="49" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ServiceTask_1xckprl_di" bpmnElement="ServiceTask_ShipGoods">
+        <dc:Bounds x="463" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_1ssg80u_di" bpmnElement="TextAnnotation_1ssg80u">
+        <dc:Bounds x="492.54707379134857" y="8" width="100" height="30" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_0s6v9gu_di" bpmnElement="Association_0s6v9gu">
+        <di:waypoint x="525" y="80" />
+        <di:waypoint x="538" y="38" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="EndEvent_0sl0ttw_di" bpmnElement="EndEvent_OrderShipped">
+        <dc:Bounds x="867.5470737913486" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="851" y="142" width="70" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_12j6m4a_di" bpmnElement="SequenceFlow_12j6m4a">
+        <di:waypoint x="563" y="120" />
+        <di:waypoint x="579" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="526" y="99" width="90" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_13f7q4z_di" bpmnElement="SequenceFlow_13f7q4z">
+        <di:waypoint x="679" y="120" />
+        <di:waypoint x="739" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="709" y="99" width="0" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ReceiveTask_0n6vzra_di" bpmnElement="ReceiveTask_WaitForGoodsShipped">
+        <dc:Bounds x="579" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_0vhmt72_di" bpmnElement="TextAnnotation_0vhmt72">
+        <dc:Bounds x="649.5674300254453" y="8" width="100" height="30" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_0sj35vl_di" bpmnElement="Association_0sj35vl">
+        <di:waypoint x="658" y="80" />
+        <di:waypoint x="689" y="38" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0e88tbe_di" bpmnElement="SequenceFlow_0e88tbe">
+        <di:waypoint x="775" y="120" />
+        <di:waypoint x="868" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="821.5" y="99" width="0" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="IntermediateCatchEvent_1x7nn5e_di" bpmnElement="IntermediateThrowEvent_10qjrod">
+        <dc:Bounds x="739" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="721" y="142" width="71" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0ku8e1v_di" bpmnElement="SequenceFlow_0ku8e1v">
+        <di:waypoint x="315" y="160" />
+        <di:waypoint x="315" y="234" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="285" y="191" width="90" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ServiceTask_1fjoejo_di" bpmnElement="provapippo">
+        <dc:Bounds x="265" y="234" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0o8yc67_di" bpmnElement="SequenceFlow_0o8yc67">
+        <di:waypoint x="365" y="274" />
+        <di:waypoint x="463" y="274" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="414" y="253" width="0" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_19jahn3_di" bpmnElement="SequenceFlow_19jahn3">
+        <di:waypoint x="513" y="234" />
+        <di:waypoint x="513" y="160" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="528" y="191" width="0" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ServiceTask_1s8uj2p_di" bpmnElement="sendmail">
+        <dc:Bounds x="463" y="234" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

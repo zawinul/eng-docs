@@ -1,0 +1,8 @@
+.home .centered {
+  text-align: center;
+}
+.home .centered img {
+  width: 50%;
+  max-width: 250px;
+  margin: 0px auto 20px auto;
+}

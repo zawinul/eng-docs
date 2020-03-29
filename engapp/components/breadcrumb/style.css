@@ -1,0 +1,19 @@
+.engapp-breadcrumb {
+  position: relative;
+  top: 5px;
+  left: 0;
+  height: 21px;
+  width: 100%;
+  padding-left: 15px;
+}
+.engapp-breadcrumb .elemento {
+  float: left;
+  margin-right: 6px;
+}
+.engapp-breadcrumb .separatore {
+  float: left;
+  margin-right: 6px;
+}
+body.is-main .engapp-breadcrumb {
+  display: none;
+}

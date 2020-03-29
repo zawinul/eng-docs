@@ -1,0 +1,92 @@
+package it.eng.ms.camundademo.security;
+
+import static org.camunda.bpm.engine.authorization.Authorization.ANY;
+import static org.camunda.bpm.engine.authorization.Authorization.AUTH_TYPE_GRANT;
+import static org.camunda.bpm.engine.authorization.Permissions.ALL;
+import static org.camunda.bpm.engine.authorization.Resources.FILTER;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.camunda.bpm.engine.AuthorizationService;
+import org.camunda.bpm.engine.IdentityService;
+import org.camunda.bpm.engine.ProcessEngine;
+import org.camunda.bpm.engine.authorization.Authorization;
+import org.camunda.bpm.engine.authorization.Groups;
+import org.camunda.bpm.engine.authorization.Resource;
+import org.camunda.bpm.engine.authorization.Resources;
+import org.camunda.bpm.engine.filter.Filter;
+import org.camunda.bpm.engine.identity.Group;
+import org.camunda.bpm.engine.identity.User;
+import org.camunda.bpm.engine.task.TaskQuery;
+
+public class DummyDefaultUser {
+	private static final boolean DISABLE = true;
+	public static void create(ProcessEngine engine) {
+		if (DISABLE)
+			return;
+		
+		IdentityService is = engine.getIdentityService();
+		AuthorizationService as = engine.getAuthorizationService();
+		// and add default user to Camunda to be ready-to-go
+		
+		// crea l'utente "demo"
+		boolean utenteEsistente = is.createUserQuery().userId("demo").count() > 0;
+		if (!utenteEsistente) {
+			
+			User user = is.newUser("demo");
+			user.setFirstName("Demo");
+			user.setLastName("Demo");
+			user.setPassword("demo");
+			user.setEmail("demo@camunda.org");
+			is.saveUser(user);
+
+			// crea il group "Administrators"
+			Group group = engine.getIdentityService().newGroup(Groups.CAMUNDA_ADMIN);
+			group.setName("Administrators");
+			group.setType(Groups.GROUP_TYPE_SYSTEM);
+			is.saveGroup(group);
+
+			// assegna tutti i diritti su tutte le risorse ad "Administrators"
+			for (Resource resource : Resources.values()) {
+				Authorization auth = as.createNewAuthorization(AUTH_TYPE_GRANT);
+				auth.setGroupId(Groups.CAMUNDA_ADMIN);
+				auth.addPermission(ALL);
+				auth.setResourceId(ANY);
+				auth.setResource(resource);
+				as.saveAuthorization(auth);
+			}
+			// inserisce "demo" nel group "Administrators"
+			is.createMembership("demo",Groups.CAMUNDA_ADMIN);
+		}
+
+		// crea un filtro "all task" il cui proprietario è "demo"
+		if (engine.getFilterService().createFilterQuery().filterName("Tutto").count() == 0) {
+
+			Map<String, Object> filterProperties = new HashMap<String, Object>();
+			filterProperties.put("description", "Tutte le attività");
+			filterProperties.put("priority", 10);
+
+			TaskQuery query = engine.getTaskService().createTaskQuery();
+			Filter filter = engine.getFilterService().newTaskFilter() 
+					.setName("Tutto") 
+					.setProperties(filterProperties)//
+					.setOwner("demo")
+					.setQuery(query);
+			engine.getFilterService().saveFilter(filter);
+
+			// autorizza "demo" ad usare il filtro
+			boolean utenteAutorizzato = as.createAuthorizationQuery()
+					.resourceType(FILTER).resourceId(filter.getId()) 
+					.userIdIn("demo").count() > 0;
+			if (!utenteAutorizzato) {
+				Authorization managementGroupFilterRead = as.createNewAuthorization(Authorization.AUTH_TYPE_GRANT);
+				managementGroupFilterRead.setResource(FILTER);
+				managementGroupFilterRead.setResourceId(filter.getId());
+				managementGroupFilterRead.addPermission(ALL);
+				managementGroupFilterRead.setUserId("demo");
+				as.saveAuthorization(managementGroupFilterRead);
+			}
+		}
+	}
+}

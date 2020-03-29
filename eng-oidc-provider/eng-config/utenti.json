@@ -1,0 +1,80 @@
+[
+	{
+		"accountId": "23121d3c-84df-44ac-b458-3d63a9a05497",
+		"login": "paolo",
+		"password": "aaa",
+		"claims": {
+			"personali":{
+				"nome": "Paolo",
+				"cognome": "Andrenacci",
+				"titolo": "signor"				
+			},
+			"email": "foo@example.com",
+			"email_verified": true,
+			"organigramma": [
+				{
+					"societa": "pippo",
+					"dipartimento": "pluto",
+					"ruolo": "direttore"
+				},
+				{
+					"societa": "pluto",
+					"dipartimento": "paperino",
+					"ruolo": "consultatore"
+				}
+			],
+			"abilitazioni": [
+				{
+					"sistema": "protocollo",
+					"ambito": "affari legali",
+					"profilo": "inserimento dati"
+				},
+				{	
+					"sistema": "servizio1"
+				},
+				{
+					"sistema": "workflow",
+					"camunda_id": "paolo"
+				}
+			],
+			"camunda_id": "paolo",
+			"messaggio": "ola"
+		}
+	},
+	{
+		"accountId": "c2ac2b4a-2262-4e2f-847a-a40dd3c4dcd5",
+		"login": "pippo",
+		"password": "bbb",
+		"claims": {
+			"personali":{
+				"nome": "Pippo",
+				"cognome": "Filippucci",
+				"titolo": "dottor"				
+			},
+			"email": "bar@example.com",
+			"email_verified": false,
+			"organigramma": [
+				{
+					"societa": "acme",
+					"dipartimento": "pluto",
+					"ruolo": "direttore"
+				}
+			],
+			"abilitazioni": [
+				{
+					"sistema": "protocollo",
+					"ambito": "affari legali",
+					"profilo": "inserimento dati"
+				},
+				{	
+					"sistema": "servizio1"
+				},
+				{
+					"sistema": "workflow",
+					"camunda_id": "demo"
+				}
+			],
+			"camunda_id": "demo"
+		}
+	}
+]

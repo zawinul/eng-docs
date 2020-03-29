@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>MAIL</title>
+	<style>
+		body {
+			width: 90%;
+			padding: 5%;
+		}
+
+		.ptitle {
+			width:20%;
+			float:left;
+			clear:left;
+			font-weight: bold;
+		}
+		.pcontent {
+			width: 79%;
+			float:left;
+			clear:right;
+			border: 1px solid lightgray;
+		}
+
+		.button {
+			float: right;
+			margin: 8px;
+			min-width: 80px;
+			background-color: lightgray;
+			border: 1px solid gray;
+			border-radius: 8px;
+			padding: 8px;
+		}
+	</style>
+</head>
+<body>
+	<p>Gentile utente,</p>
+	<p>
+		Le notifichiamo il rifiuto di una R3. 
+	</p>
+	<h3>PARAMETRI</h3>
+	<div class="ptitle">Motivo</div>
+	<div class="pcontent">${motivoRifiuto}</div>
+	<div class="ptitle">Mittente</div>
+	<div class="pcontent">${mittente}</div>
+	<div class="ptitle">Destinatario</div>
+	<div class="pcontent">${destinatario}</div>
+	<div class="ptitle">Testo</div>
+	<div class="pcontent"><pre>${testo}</pre></div>
+
+</body>
+</html>
+

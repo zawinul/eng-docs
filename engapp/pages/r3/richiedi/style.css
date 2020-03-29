@@ -1,0 +1,15 @@
+.r3-richiedi {
+	overflow: hidden;
+}
+
+
+.r3-richiedi .label {
+	float:left;
+	width: 120px;
+	clear:left;
+}
+
+.r3-richiedi .valore {
+	float:left;
+	clear:right;
+}

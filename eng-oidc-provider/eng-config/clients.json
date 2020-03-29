@@ -1,0 +1,42 @@
+[
+	{
+		"client_id": "foo",
+		"client_secret": "bar",
+		"redirect_uris": [
+			"https://oidc-consumer:5043/callback",
+			"https://oidc-consumer:5043/callback-after-auth"
+		]
+	},
+	{
+		"client_id": "foo2",
+		"client_secret": "bar2",
+		"redirect_uris": [
+			"https://oidc-consumer:5043/callback",
+			"https://oidc-consumer:5043/callback-after-auth"
+		]
+	},
+	{
+		"client_id": "r3",
+		"client_secret": "r3-bar",
+		"redirect_uris": [
+			"https://eng-static:91/oidc/cb.html"
+		]
+	},
+	{
+		"client_id": "engapp",
+		"client_secret": "engapp-pwd123",
+		"__COMMENTED__audience": "eng-doc-domain",
+		"redirect_uris": [
+			"https://127.0.0.1:91/oidc/cb.html",
+			"https://engapp:91/oidc/cb.html"
+		]
+	},
+	{
+		"client_id": "camunda",
+		"client_secret": "camundasecret",
+		"redirect_uris": [
+			"https://127.0.0.1:8079/oidc-callback",
+			"https://127.0.0.1:8081/oidc-callback"
+		]
+	}
+]

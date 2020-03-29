@@ -1,0 +1,16 @@
+messagi
+	- richiestaInvioR3MessageQueue
+	- richiestaInvioR3MessageREST
+	- confermaArrivata
+	- ricevutaRitornoArrivata
+	
+variabili
+	- esitoVerificaInput ["ok", "ko", "confirm"]
+	- esitoConferma ["ok", "ko", "changed"]
+	
+adapter
+	- sendInvioRichiestaConferma
+	- sendInvioNotificaRifiuto
+	- sendNotificaTimeoutRR
+	- sendNotificaRicevuta
+	

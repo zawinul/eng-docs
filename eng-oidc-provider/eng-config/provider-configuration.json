@@ -1,0 +1,42 @@
+{
+	"formats": {
+		"default": "opaque",
+		//"default": "jwt",
+		"AccessToken": "opaque"
+	},
+	"features": {
+		"devInteractions": false,
+		"claimsParameter": true,
+		"conformIdTokenClaims": true,
+		"discovery": true,
+		"encryption": true,
+		"introspection": true,
+		"registration": true,
+		"request": true,
+		"revocation": true,
+		"sessionManagement": true
+	},
+	"claims": {
+		"openid": [
+			"sub"
+		],
+		"email": [
+			"email",
+			"email_verified"
+		],
+		"profile": [
+			"organigramma",
+			"abilitazioni",
+			"personali"
+		]
+	},
+	"logoutSource": "logoutSource",
+	"postLogoutRedirectUri": "postLogoutRedirectUri",
+	"cookies": {
+		"keys": [
+			"pippo8768783204958304598",
+			"pluto9058946740587529348",
+			"paperino050344027692846598"
+		]
+	}
+}
