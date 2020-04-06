@@ -126,10 +126,10 @@ async function create(engRegisterEndpoints) {
 			refreshEndpoint();
 		
 			async function refreshEndpoint() {
-				console.log('on refresh service '+serviceName+' endpoint');
+				//console.log('on refresh service '+serviceName+' endpoint');
 				var exp = new Date().getTime()+msRefresh;
 				var ret = await registerServiceEndpoint(serviceName, serviceUrl, exp, serviceAuthorization);
-				console.log('refresh endpoint response: '+JSON.stringify(ret));
+				//console.log('refresh endpoint response: '+JSON.stringify(ret));
 				return ret;
 			}
 		}

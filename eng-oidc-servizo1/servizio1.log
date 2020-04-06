@@ -1589,3 +1589,57 @@
 {"message":"service servizio1 started!","level":"info","service":"servizio1"}
 {"message":"HTTPS server started at port https://localhost:6543","level":"info","service":"servizio1"}
 {"message":"STARTED!!!","level":"info","service":"servizio1"}
+{"message":"logger started","level":"info","service":"servizio1"}
+{"message":"starting servizio1","level":"info","service":"servizio1"}
+{"message":"required https port 6543","level":"info","service":"servizio1"}
+{"message":"obtained https port 6543","level":"info","service":"servizio1"}
+{"message":"starting https on port 6543","level":"info","service":"servizio1"}
+{"message":"URL: https://localhost:6543","level":"info","service":"servizio1"}
+{"message":"service servizio1 started!","level":"info","service":"servizio1"}
+{"message":"HTTPS server started at port https://localhost:6543","level":"info","service":"servizio1"}
+{"message":"STARTED!!!","level":"info","service":"servizio1"}
+{"message":"logger started","level":"info","service":"servizio1"}
+{"message":"starting servizio1","level":"info","service":"servizio1"}
+{"message":"required https port 6543","level":"info","service":"servizio1"}
+{"message":"obtained https port 6543","level":"info","service":"servizio1"}
+{"message":"starting https on port 6543","level":"info","service":"servizio1"}
+{"message":"URL: https://localhost:6543","level":"info","service":"servizio1"}
+{"message":"service servizio1 started!","level":"info","service":"servizio1"}
+{"message":"HTTPS server started at port https://localhost:6543","level":"info","service":"servizio1"}
+{"message":"STARTED!!!","level":"info","service":"servizio1"}
+{"message":"logger started","level":"info","service":"servizio1"}
+{"message":"starting servizio1","level":"info","service":"servizio1"}
+{"message":"required https port 6543","level":"info","service":"servizio1"}
+{"message":"obtained https port 6543","level":"info","service":"servizio1"}
+{"message":"starting https on port 6543","level":"info","service":"servizio1"}
+{"message":"URL: https://localhost:6543","level":"info","service":"servizio1"}
+{"message":"service servizio1 started!","level":"info","service":"servizio1"}
+{"message":"HTTPS server started at port https://localhost:6543","level":"info","service":"servizio1"}
+{"message":"STARTED!!!","level":"info","service":"servizio1"}
+{"message":"logger started","level":"info","service":"servizio1"}
+{"message":"starting servizio1","level":"info","service":"servizio1"}
+{"message":"required https port 6543","level":"info","service":"servizio1"}
+{"message":"obtained https port 6543","level":"info","service":"servizio1"}
+{"message":"starting https on port 6543","level":"info","service":"servizio1"}
+{"message":"URL: https://localhost:6543","level":"info","service":"servizio1"}
+{"message":"service servizio1 started!","level":"info","service":"servizio1"}
+{"message":"HTTPS server started at port https://localhost:6543","level":"info","service":"servizio1"}
+{"message":"STARTED!!!","level":"info","service":"servizio1"}
+{"message":"logger started","level":"info","service":"servizio1"}
+{"message":"starting servizio1","level":"info","service":"servizio1"}
+{"message":"required https port 6543","level":"info","service":"servizio1"}
+{"message":"obtained https port 6543","level":"info","service":"servizio1"}
+{"message":"starting https on port 6543","level":"info","service":"servizio1"}
+{"message":"URL: https://localhost:6543","level":"info","service":"servizio1"}
+{"message":"service servizio1 started!","level":"info","service":"servizio1"}
+{"message":"HTTPS server started at port https://localhost:6543","level":"info","service":"servizio1"}
+{"message":"STARTED!!!","level":"info","service":"servizio1"}
+{"message":"logger started","level":"info","service":"servizio1"}
+{"message":"starting servizio1","level":"info","service":"servizio1"}
+{"message":"required https port 6543","level":"info","service":"servizio1"}
+{"message":"obtained https port 6543","level":"info","service":"servizio1"}
+{"message":"starting https on port 6543","level":"info","service":"servizio1"}
+{"message":"URL: https://localhost:6543","level":"info","service":"servizio1"}
+{"message":"service servizio1 started!","level":"info","service":"servizio1"}
+{"message":"HTTPS server started at port https://localhost:6543","level":"info","service":"servizio1"}
+{"message":"STARTED!!!","level":"info","service":"servizio1"}

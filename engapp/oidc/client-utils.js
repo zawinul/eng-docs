@@ -170,15 +170,20 @@ var oidc = (function () {
 	// }
 
 	function urlForImplicitSingleSignOn(client, callerParams, nonce, cbURI) {
-
+		debugger;
+		
 		var enc_state = btoa(JSON.stringify(callerParams));
 		var params = {
-			response_type: 'id_token token',
+			response_type: 'id_token',
+			//response_type: 'code',
+			//response_type: 'token',
+			//response_type:'id_token token',
 			state: enc_state,
 			nonce: nonce,
 			client_id: client,
-			scope: 'openid email profile',
-			//scope: 'openid',
+			//scope: 'openid email profile',
+			scope: 'openid email profile personali organigramma abilitazioni messaggio',
+			//scope: ' email profile personali organigramma abilitazioni messaggio',
 			redirect_uri: cbURI
 		};
 		var a = [];

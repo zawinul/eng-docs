@@ -29,7 +29,9 @@
 		"redirect_uris": [
 			"https://127.0.0.1:91/oidc/cb.html",
 			"https://engapp:91/oidc/cb.html"
-		]
+		],
+		"grant_types": ["implicit"],
+		"response_types": ["id_token"]
 	},
 	{
 		"client_id": "camunda",

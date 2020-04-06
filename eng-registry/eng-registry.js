@@ -9,7 +9,7 @@ async function main() {
 		httpURL: null,
 		httpsURL: 'https://eng-registry:5432',
 		noRegistry: true,
-		secret: 'y8.+4yr8b7wd87y',
+		secret:  'y8.+4yr8b7wd87y',
 		apiPrefix: '/api/v1'
 	};
 

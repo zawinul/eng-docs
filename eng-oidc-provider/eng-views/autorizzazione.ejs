@@ -117,8 +117,8 @@
 
 
 		<!-- body -->
-		<form autocomplete="off" action="/interaction/<%= details.uuid %>/confirm" method="post">
-			<input type="hidden" name="uuid" value="<%= details.uuid %>"/>
+		<form autocomplete="off" action="/interaction/<%= details.uid %>/confirm" method="post">
+			<input type="hidden" name="uid" value="<%= details.uid %>"/>
 			<button autofocus type="submit" class="login login-submit">Continue</button>
 		
 		
@@ -149,9 +149,8 @@
 
 	<pre style="text-align: left"><%=  
 		JSON.stringify({
-			uuid:details.uuid,
-			params:params,
-			interaction:interaction
+			uid:details.uuid,
+			params:params
 		},null,1);
 	%></pre>
 

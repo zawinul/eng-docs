@@ -23,7 +23,9 @@
 	async function doLogin() {
 		await engapp.load('oidc/client-utils.js');
 		var data = await oidc.getCredentials(true); 
-		$('.curr-user').text(data.user.personali.nome).show();
+		try {
+			$('.curr-user').text(data.user.personali.nome).show();
+		} catch(e) {}
 		
 
 		console.log(data);
@@ -34,7 +36,9 @@
 	async function doLogin2() {
 		await engapp.load('oidc/client-utils.js');
 		var data = await oidc.getCredentials(false); 
-		$('.curr-user').text(data.user.personali.nome).show();
+		try {
+			$('.curr-user').text(data.user.personali.nome).show();
+		} catch(e) {};
 		
 
 		console.log(data);

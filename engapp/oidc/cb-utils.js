@@ -4,10 +4,11 @@ function processCallbackPage() {
 
 async function startProcessCallbackPage() {
 
+
 	console.log('processCallbackPage');
 	var x = await parseOidcCallback();
 	console.log('parseOidcCallback received');
-	var y = { // x semolificato
+	var y = { // x semplificato
 		id_token: x.id_token,
 		id: x.id,
 		access_token: x.access_token,
@@ -36,6 +37,7 @@ async function startProcessCallbackPage() {
 }
 
 function verificaToken(x) {
+	debugger;
 	console.log({verificaToken: x});
 	var b1 = x.state.mark^localStorage.hmark^localStorage.hsecret;
 	var b2 = x.user.nonce^localStorage.hnonce^localStorage.hsecret;
@@ -55,23 +57,26 @@ function verificaToken(x) {
 
 async function parseOidcCallback() {
 	console.log('parseOidcCallback');
-
+	debugger;
 	var obj = {};
-	var resp = location.href.split('#')[1];
+	var resp = location.href.split('#')[1] || location.href.split('?')[1] ;
 	resp.split('&').map(function (x) {
 		var y = unescape(x).split('=');
 		obj[y[0]] = y[1];
 	});
 
-	var state = JSON.parse(atob(obj.state));
+	var state = obj.state ? JSON.parse(atob(obj.state)) : {};
 	console.log('calling userInfoFromToken');
 
-	//var user = await userInfoFromToken(obj.access_token);
+	debugger;
+	//var user = await userInfoFromToken(obj.code);
 	var user = JSON.parse(atob(obj.id_token.split('.')[1]));
+
+
 	var result = {
 		obj:obj,
 		state:state,
-		access_token: obj.access_token,
+		access_token: obj.code,
 		id_token: obj.id_token,
 		exp: user.exp,
 		user:user
@@ -92,17 +97,15 @@ async function parseOidcCallback() {
 
 
 async function userInfoFromToken(accessToken) {
-	var get = $.ajax('https://oidc-provider:3043/me',{
+	var get = $.ajax('https://oidc-provider:3043/token',{
 		method:'GET',
 		dataType: 'json', 
 		headers: {
 			Authorization: 'Bearer '+accessToken
 		}
-	});
-
-	get.catch(function(error) {
-		ret.reject(error);
+	}).catch(function(error) {
 		console.log("getUserInfo error", error);
 	});
+
 	return get;
 }

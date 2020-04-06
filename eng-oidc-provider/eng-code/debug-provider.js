@@ -60,14 +60,14 @@ function attachOtherEvents(provider) {
 }
 
 function doDebug(provider) {
-	provider.use(async (ctx, next) => {
-		console.log(' ** middleware pre', ctx.method, ctx.path);	// ...
-		await next();
-		console.log(' ## middleware post', ctx.method); // ...
-	});
+// 	provider.use(async (ctx, next) => {
+// 		//console.log(' ** middleware pre', ctx.method, ctx.path);	// ...
+// 		await next();
+// 		//console.log(' ## middleware post', ctx.method); // ...
+// 	});
 	
-	attachErrorEvents(provider);
-	attachOtherEvents(provider);
+ 	attachErrorEvents(provider);
+// //	attachOtherEvents(provider);
 }
 
 module.exports = doDebug;

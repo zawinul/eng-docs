@@ -4,6 +4,7 @@ const Resilient = require('resilient');
 const CONFIGSECRET = 'IHIHIHUHUIHIUHg33';
 const myDefaultUrl = "https://oidc-provider:3043";
 const registryClientFactory = require('../../eng-registry-node-client');
+const defaultProviderConfiguration = require('../eng-config/provider-configuration.json');
 var registryClient;
 var registeredService;
 
@@ -54,7 +55,7 @@ async function getConfig() {
 
 	
 	var externalConfig = await registeredService.getThisConfig();
-	Object.assign(conf, externalConfig);
+	Object.assign(conf, defaultProviderConfiguration, externalConfig);
 
 	return conf;
 }
@@ -62,7 +63,7 @@ async function getConfig() {
 function registerEndpoint(url, msRefresh) {
 	if (url.endsWith('/'))
 		url = url.substring(0, url.length-1);
-	registeredService.startRegisterEndpointTimer(url, msRefresh||10000);
+	registeredService.startRegisterEndpointTimer(url, msRefresh||60000);
 }
 
 module.exports = {

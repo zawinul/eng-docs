@@ -12,6 +12,7 @@ function readJsonFile(name, defaultData) {
 				else
 					resolve(JSON.parse(data));
 			}catch(e) {
+				console.log('error while reading '+name+', returning default data');
 				console.log(e);
 				return defaultData;
 			}

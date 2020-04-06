@@ -1,20 +1,22 @@
 {
 	"formats": {
 		"default": "opaque",
-		//"default": "jwt",
+		"OLD_default": "jwt",
 		"AccessToken": "opaque"
 	},
 	"features": {
-		"devInteractions": false,
-		"claimsParameter": true,
-		"conformIdTokenClaims": true,
-		"discovery": true,
-		"encryption": true,
-		"introspection": true,
-		"registration": true,
-		"request": true,
-		"revocation": true,
-		"sessionManagement": true
+		"devInteractions": { "enabled": true},
+		"claimsParameter": { "enabled": true},
+		"encryption": { "enabled": true},
+		"introspection": { "enabled": true},
+		"registration": { "enabled": true},
+		"requestObjects": { 
+			"request": true
+		},
+		"revocation": { "enabled": true},
+		"sessionManagement": { "enabled": true},
+		"userinfo": { "enabled": true},
+		"jwtUserinfo": { "enabled": true}
 	},
 	"claims": {
 		"openid": [
@@ -38,5 +40,10 @@
 			"pluto9058946740587529348",
 			"paperino050344027692846598"
 		]
-	}
+	},
+	"response_types": [
+		"code",
+		"id_token token",
+		"id_token"
+	]
 }

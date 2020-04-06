@@ -14,7 +14,7 @@ var idMap = {}, loginMap={};
 class Account {
 	static inizializza() {
 		for(var i=0; i<USERSdata.length; i++) {
-			let x = USERSdata[i];
+			let x = USERSdata[i]; 
 			let y = new Account(x.accountId);
 			y.claimsData = x.claims;
 			y.passwordHash = x.passwordHash || hash(x.password);
@@ -31,13 +31,9 @@ class Account {
 	// claims() should return or resolve with an object with claims that are mapped 1:1 to
 	// what your OP supports, oidc-provider will cherry-pick the requested ones automatically
 	claims() {
-		return Object.assign({}, this.claimsData, {
-			sub: this.accountId
-			// , altro_ancora: {
-			// 	p:123,
-			// 	q:new Date()
-			// }
-		});
+		var data = Object.assign({}, this.claimsData);
+		data.sub = this.accountId;
+		return data;
 	}
 
 	static async findById(ctx, id) {

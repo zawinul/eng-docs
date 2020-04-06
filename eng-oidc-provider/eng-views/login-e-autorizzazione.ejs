@@ -116,16 +116,18 @@
 		</div>
 
 
-		<form autocomplete="off" action="/interaction/<%= details.uuid %>/login" method="post">
-			<input type="hidden" name="uuid" value="<%= details.uuid %>"/>
-			<input required type="text" name="login" placeholder="Enter any login" <% if (!details.params.login_hint) { %>autofocus="on"<% } else { %> value="<%= details.params.login_hint %>" <% } %>>
-			<input required type="password" name="password" placeholder="and password" <% if (details.params.login_hint) { %>autofocus="on"<% } %>>
+		<form autocomplete="off" action="/interaction/<%= details.uid %>/login" method="post">
+			<input type="hidden" name="uid" value="<%= details.uid %>"/>
+			<input required type="text" name="login" placeholder="Enter any login">
+			<input required type="password" name="password" placeholder="and password">
 			<br>
 			<label><input type="checkbox" name="remember" value="yes" checked="yes">Stay signed in</label>
 		  
 			<hr>
-			l'applicazione <b><%= params.client_id %></b> chiede la tua autorizzazione per avere 
-			accesso alle seguenti informazioni che ti riguardano:<br>
+			l'applicazione 
+			<b><%= params.client_id %></b> 
+			chiede la tua autorizzazione per avere accesso alle seguenti 
+			informazioni che ti riguardano:<br>
 			<!-- <span style="font-size:.8em">se lasci il check vuol dire che autorizzi</span><br> -->
 			<% for(var i=0; i<scopes.length; i++) {%>
 				<label>
@@ -147,9 +149,8 @@
 
 	<pre style="text-align: left"><%=  
 		JSON.stringify({
-			uuid:details.uuid,
-			params:params,
-			interaction:interaction
+			uid:details.uid,
+			params:params
 		},null,1);
 	%></pre>
 
