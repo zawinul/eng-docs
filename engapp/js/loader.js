@@ -14,9 +14,9 @@ var verbose = false;
 var initialLoad = [
 
 	// bootstrap
-	"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css",
-	"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js",
-	"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js",
+	"#https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css",
+	"#https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js",
+	"#https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js",
 	
 
 	"img/loading.gif",
@@ -145,6 +145,15 @@ function vurl(url) {
 	if (!url.indexOf) {
 		console.log(url);
 	}
+
+	// convenzione: se l'url comincia con # non occorre no-caching
+	if (url.indexOf('#')==0) {
+		var u = url.substring(1);
+		if (u.indexOf('?')<0)
+			u = u+'?';
+		return u;
+	}
+
 	if (NOCACHE) {
 		if (url.indexOf('_nc=')>=0)
 			return url;
@@ -210,7 +219,7 @@ function load(url) {
 		return loadMultiplo(url);
 
 	var v = vurl(url);
-	
+	console.log('load vurl=['+v+']');
 	if (v.indexOf('.js?')>=0) 
 		return loadJavascript(url);
 	else if (v.indexOf('.css?')>=0)
@@ -249,6 +258,7 @@ function loadJavascript(url) {
 }
 
 function loadCss(url, immediate) {
+	console.log(`loadCss(${url}, ${immediate})`);
 	if (loaded[url])  // i css si caricano una sola volta
 		return loaded[url];
 

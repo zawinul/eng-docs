@@ -2,11 +2,11 @@
   {
     "service": "oidc-provider",
     "url": "https://oidc-provider:3043",
-    "expire": 1586181802123
+    "expire": 1594127778894
   },
   {
     "service": "servizio1",
     "url": "https://localhost:6543",
-    "expire": 1586181687449
+    "expire": 1594127710866
   }
 ]
