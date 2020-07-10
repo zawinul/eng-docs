@@ -31,8 +31,9 @@ async function main() {
 
 // logica di autorizzazione:
 async function authorize(req, service) {
-	if (req.path=='/test')
+	if (req.path=='/test' || req.path=='/' || req.path=='/index.html')
 		return true;
+
 	if (req.path.startsWith('/service/endpoint/'))
 		return true;
 	if (req.socket.remoteAddress.endsWith('127.0.0.1'))

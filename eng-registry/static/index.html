@@ -3,21 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="jquery-3.2.1.js"></script>
-	<script src="yaml.js"></script>
-	<title>registry dump</title>
-	<script>
-		function get() {
-			$.get('api/v1/all').then(x=>{
-				$('.dump').text(YAML.stringify(x,null,4));
-			});
-		}
-		setInterval(get, 3000);
-	</script>
+	<title>registry home page</title>
 </head>
 <body>
-	dump: 
-	<pre class='dump'></pre>
-	
+	<h1>REGISTRY</h1>	
 </body>
 </html>

@@ -21,7 +21,6 @@ function create() {
 
 		if (oidc.isLogged()) {
 			oidc.getCredentials().then(function(data) {
-				debugger;
 				var nome = data.user.personali.nome;
 				$('.curr-user', div).text(nome).removeClass('hidden').addClass('ciao');
 			});
