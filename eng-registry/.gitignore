@@ -59,3 +59,7 @@ typings/
 
 # next.js build output
 .next
+
+
+#eng-docs
+node_modules.tar.gz
