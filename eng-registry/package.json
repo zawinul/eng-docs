@@ -4,7 +4,8 @@
   "description": "",
   "main": "eng-registry.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install-dependencies": "install-local-dependencies"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,10 @@
   "homepage": "https://github.com/zawinul/eng-registry#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "fs": "0.0.1-security"
+    "fs": "0.0.1-security",
+    "eng-ms-js-service": "file:../eng-ms-js-service"
+  },
+  "devDependencies": {
+    "local-dependencies": "^1.0.0-beta3"
   }
 }

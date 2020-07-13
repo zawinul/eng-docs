@@ -1,7 +1,7 @@
 //const configDefaultUrl = "http://eng-config:5678/api/v1";
 const randomstring = require("randomstring");
 
-const registryClientFactory = require('../eng-registry-node-client');
+const registryClientFactory = require('eng-resilient-node-client');
 //var registeredServiceFactory = require('./eng-registered-service');
 
 async function configure(instanceDefinition) {

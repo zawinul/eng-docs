@@ -1,0 +1,3 @@
+{ 
+ "eng-ms-js-service": { "path": "../eng-ms-js-service", "watch": true }
+}

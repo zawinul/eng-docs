@@ -54,9 +54,8 @@
 	}
 
 	async function initClient() {
-		var registryClient = await getThisRegistryClient();
-		debugger;
-		servizio1Client = await registryClient.getServiceClient('servizio1');
+		var app = await getThisResilientApp();
+		servizio1Client = await app.getServiceClient('servizio1');
 	}
 
 	async function testconfig() {

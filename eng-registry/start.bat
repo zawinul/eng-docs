@@ -1,1 +1,1 @@
-node eng-registry
+node src/eng-registry

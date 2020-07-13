@@ -26,7 +26,7 @@ var initialLoad = [
 	"js/engapp-lib.js",
 	"js/engapp-rest.js",
 	//"js/engapp-config.js",
-	"js/eng-registry-browser-client.js",
+	"js/eng-resilient-browser-app.js",
 
 	"js/resize.js",
 
@@ -119,14 +119,24 @@ function getUrlParams(url) {
 }
 
 function initConfig() {
-	var d = $.Deferred();
-	engapp.utils.getConfig().then(
-		function(c) {
-			engapp.config = c;
-			d.resolve();
-		}
+	debugger;
+
+	initRegistryClient(
+		'engapp', 
+		'engapp-auth123', 
+		['https://localhost:5432'], 
+		oidc.getIdToken
 	);
-	return d;
+
+	return getThisResilientApp().getThisConfig();
+	// var d = $.Deferred();
+	// engapp.utils.getConfig().then(
+	// 	function(c) {
+	// 		engapp.config = c;
+	// 		d.resolve();
+	// 	}
+	// );
+	// return d;
 }
 
 

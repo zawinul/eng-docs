@@ -4,14 +4,14 @@
   "description": "",
   "main": "engMsService.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install-dependencies-OLD": "install-local-dependencies",
+    "install-dependencies": "install-remote-dependencies"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-	  
-	"eng-registry-node-client": "file:../eng-registry-node-client",
-
+    "eng-resilient-node-client": "file:../eng-resilient-node-client",
     "axios": "^0.18.1",
     "base-64": "^0.1.0",
     "cors": "^2.8.5",
@@ -29,5 +29,8 @@
     "swagger-ui-express": "^4.1.2",
     "winston": "^3.2.1",
     "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "local-dependencies": "^1.0.0-beta3"
   }
 }
