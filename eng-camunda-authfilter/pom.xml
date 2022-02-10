@@ -171,7 +171,7 @@
 			<!-- For the demo I used ElephantSQL as cloud version of PostgreSQL -->
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
-			<version>9.4-1201-jdbc4</version>
+			<version>42.2.25</version>
 		</dependency>
 
 	</dependencies>
